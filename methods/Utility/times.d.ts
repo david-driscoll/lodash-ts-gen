@@ -45,4 +45,4 @@
         // => also invokes `mage.castSpell(n)` three times
     lang: js
 ***/
-/// <reference path="_.d.ts"/>
+/// <reference path="../Chain/_.d.ts"/>

@@ -66,4 +66,4 @@
         // => [{ 'x': 1 }, { 'x': 2 }]
     lang: js
 ***/
-/// <reference path="_.d.ts"/>
+/// <reference path="../Chain/_.d.ts"/>

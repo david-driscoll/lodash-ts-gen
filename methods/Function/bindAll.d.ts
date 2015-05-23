@@ -1,5 +1,5 @@
 /*
-    aliases: 
+    aliases:
     category: Function
     isCtor: false
     isFunction: true
@@ -9,19 +9,19 @@
     isStatic: true
     member: _
     name: bindAll
-    params: 
+    params:
         (0) object: Object
         (1) [methodNames]: ...(string|string[]
     returns: Object
     type: Function
-    comment: 
+    comment:
         Binds methods of an object to the object itself, overwriting the existing
         method. Method names may be specified as individual arguments or as arrays
         of method names. If no method names are provided all enumerable function
         properties, own and inherited, of `object` are bound.
-        
+
         **Note:** This method does not set the "length" property of bound functions.
-        
+
         @static
         @memberOf _
         @category Function
@@ -30,17 +30,23 @@
         specified as individual method names or arrays of method names.
         @returns {Object} Returns `object`.
         @example
-        
+
         var view = {
         'label': 'docs',
         'onClick': function() {
         console.log('clicked ' + this.label);
         }
         };
-        
+
         _.bindAll(view);
         jQuery('#docs').on('click', view.onClick);
         // => logs 'clicked docs' when the element is clicked
     lang: js
 ***/
-/// <reference path="_.d.ts"/>
+/// <reference path="../Chain/_.d.ts"/>
+
+interface LoDashStatic {
+    //:comment
+    bindAll<T>(object: T, ...methodNames: string[]): T;
+    bindAll<T>(object: T, methodNames?: string[]): T;
+}

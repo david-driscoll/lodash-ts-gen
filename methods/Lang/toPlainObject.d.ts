@@ -37,4 +37,4 @@
         // => { 'a': 1, 'b': 2, 'c': 3 }
     lang: js
 ***/
-/// <reference path="_.d.ts"/>
+/// <reference path="../Chain/_.d.ts"/>

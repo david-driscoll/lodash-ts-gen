@@ -35,4 +35,4 @@
         // => logs each value from right to left and returns the array
     lang: js
 ***/
-/// <reference path="_.d.ts"/>
+/// <reference path="../Chain/_.d.ts"/>

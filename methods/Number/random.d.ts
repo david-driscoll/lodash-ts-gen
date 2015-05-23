@@ -43,4 +43,4 @@
         // => a floating-point number between 1.2 and 5.2
     lang: js
 ***/
-/// <reference path="_.d.ts"/>
+/// <reference path="../Chain/_.d.ts"/>

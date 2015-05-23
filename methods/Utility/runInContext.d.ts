@@ -49,4 +49,4 @@
         var defer = _.runInContext({ 'setTimeout': setImmediate }).defer;
     lang: js
 ***/
-/// <reference path="_.d.ts"/>
+/// <reference path="../Chain/_.d.ts"/>

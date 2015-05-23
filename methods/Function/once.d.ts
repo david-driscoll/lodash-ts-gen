@@ -1,5 +1,5 @@
 /*
-    aliases: 
+    aliases:
     category: Function
     isCtor: false
     isFunction: true
@@ -9,26 +9,31 @@
     isStatic: true
     member: _
     name: once
-    params: 
+    params:
         (0) func: Function
     returns: Function
     type: Function
-    comment: 
+    comment:
         Creates a function that is restricted to invoking `func` once. Repeat calls
         to the function return the value of the first call. The `func` is invoked
         with the `this` binding and arguments of the created function.
-        
+
         @static
         @memberOf _
         @category Function
         @param {Function} func The function to restrict.
         @returns {Function} Returns the new restricted function.
         @example
-        
+
         var initialize = _.once(createApplication);
         initialize();
         initialize();
         // `initialize` invokes `createApplication` once
     lang: js
 ***/
-/// <reference path="_.d.ts"/>
+/// <reference path="../Chain/_.d.ts"/>
+
+interface LoDashStatic {
+    //:comment
+    once<T extends Function>(func: T): T;
+}

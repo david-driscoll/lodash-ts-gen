@@ -38,4 +38,4 @@
         // => { '1': ['a', 'c'], '2': ['b'] }
     lang: js
 ***/
-/// <reference path="_.d.ts"/>
+/// <reference path="../Chain/_.d.ts"/>

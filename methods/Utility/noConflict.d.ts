@@ -26,4 +26,4 @@
         var lodash = _.noConflict();
     lang: js
 ***/
-/// <reference path="_.d.ts"/>
+/// <reference path="../Chain/_.d.ts"/>

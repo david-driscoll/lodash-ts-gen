@@ -32,4 +32,4 @@
         // logs 'deferred' after one or more milliseconds
     lang: js
 ***/
-/// <reference path="_.d.ts"/>
+/// <reference path="../Chain/_.d.ts"/>

@@ -32,4 +32,4 @@
         // => [['fred', 'barney'], [30, 40], [true, false]]
     lang: js
 ***/
-/// <reference path="_.d.ts"/>
+/// <reference path="../Chain/_.d.ts"/>

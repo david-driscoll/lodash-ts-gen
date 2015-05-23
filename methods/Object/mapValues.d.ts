@@ -57,4 +57,4 @@
         // => { 'fred': 40, 'pebbles': 1 } (iteration order is not guaranteed)
     lang: js
 ***/
-/// <reference path="_.d.ts"/>
+/// <reference path="../Chain/_.d.ts"/>

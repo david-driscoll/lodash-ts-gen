@@ -41,4 +41,4 @@
         // => logs 'b' and 'a' assuming `_.forOwn` logs 'a' and 'b'
     lang: js
 ***/
-/// <reference path="_.d.ts"/>
+/// <reference path="../Chain/_.d.ts"/>

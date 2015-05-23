@@ -36,4 +36,4 @@
         // => ['a', 'b', 'c'] (iteration order is not guaranteed)
     lang: js
 ***/
-/// <reference path="_.d.ts"/>
+/// <reference path="../Chain/_.d.ts"/>

@@ -1,5 +1,5 @@
 /*
-    aliases: 
+    aliases:
     category: Function
     isCtor: false
     isFunction: true
@@ -9,17 +9,17 @@
     isStatic: true
     member: _
     name: before
-    params: 
+    params:
         (0) n: number
         (1) func: Function
     returns: Function
     type: Function
-    comment: 
+    comment:
         Creates a function that invokes `func`, with the `this` binding and arguments
-        of the created function, while it is called less than 
+        of the created function, while it is called less than
 ` times. Subsequent
         calls to the created function return the result of the last `func` invocation.
-        
+
         @static
         @memberOf _
         @category Function
@@ -27,9 +27,14 @@
         @param {Function} func The function to restrict.
         @returns {Function} Returns the new restricted function.
         @example
-        
+
         jQuery('#add').on('click', _.before(5, addContactToList));
         // => allows adding up to 4 contacts to the list
     lang: js
 ***/
-/// <reference path="_.d.ts"/>
+/// <reference path="../Chain/_.d.ts"/>
+
+interface LoDashStatic {
+    //:comment
+    after<T extends Function>(n: number, func: T): T;
+}
