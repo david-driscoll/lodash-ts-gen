@@ -1,0 +1,4 @@
+*.js
+methods.txt
+node_modules/
+typings/

@@ -1,0 +1,63 @@
+interface IEntry {
+    new (entry: string, source: string, lang?: string): IEntry;
+    getAliases(): IAlias[];
+    getAliases(index: number): IAlias;
+    getCall(): string;
+    getCategory(): string;
+    getDesc(): string;
+    getExample(): string;
+    isAlias(): boolean;
+    isCtor(): boolean;
+    isFunction(): boolean;
+    isLicense(): boolean;
+    isPlugin(): boolean;
+    isPrivate(): boolean;
+    isStatic(): boolean;
+    getLineNumber(): number;
+    getMembers(): string[];
+    getMembers(index?): string;
+    getName(): string;
+    getParams(): [string, string, string][];
+    getParams(index?): [string, string, string];
+    getReturns(): [string, string];
+    getType(): string;
+    getHash(style?: string): string;
+    getHash(style: 'github'): string;
+    getHash(style: 'default'): string;
+    entry: string;
+    lang: string;
+    source: string;
+}
+
+interface IAlias {
+    new (name: string, owner: IEntry): IAlias;
+    getAliases(): IAlias[];
+    getAliases(index: number): IAlias;
+    getCall(): string;
+    getCategory(): string;
+    getDesc(): string;
+    getExample(): string;
+    isAlias(): boolean;
+    isCtor(): boolean;
+    isFunction(): boolean;
+    isLicense(): boolean;
+    isPlugin(): boolean;
+    isPrivate(): boolean;
+    isStatic(): boolean;
+    getLineNumber(): number;
+    getMembers(): string[];
+    getMembers(index?): string;
+    getName(): string;
+    getParams(): [string, string, string][];
+    getParams(index?): [string, string, string];
+    getReturns(): [string, string][];
+    getType(): string;
+    getOwner(): IEntry;
+    getParams(): string[];
+    getParams(index?): string;
+    getReturns(): string[];
+    getType(): string;
+    getHash(style?: string): string;
+    getHash(style: 'github'): string;
+    getHash(style: 'default'): string;
+}
