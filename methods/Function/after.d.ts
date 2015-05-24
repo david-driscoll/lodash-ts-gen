@@ -1,5 +1,5 @@
 /*
-    aliases:
+    aliases: 
     category: Function
     isCtor: false
     isFunction: true
@@ -9,16 +9,16 @@
     isStatic: true
     member: _
     name: after
-    params:
+    params: 
         (0) n: number
         (1) func: Function
     returns: Function
     type: Function
-    comment:
+    comment: 
         The opposite of `_.before`; this method creates a function that invokes
-        `func` once it is called
+        `func` once it is called 
 ` or more times.
-
+        
         @static
         @memberOf _
         @category Function
@@ -26,13 +26,13 @@
         @param {Function} func The function to restrict.
         @returns {Function} Returns the new restricted function.
         @example
-
+        
         var saves = ['profile', 'settings'];
-
+        
         var done = _.after(saves.length, function() {
         console.log('done saving!');
         });
-
+        
         _.forEach(saves, function(type) {
         asyncSave({ 'type': type, 'complete': done });
         });

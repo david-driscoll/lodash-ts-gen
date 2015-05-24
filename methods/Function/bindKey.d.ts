@@ -1,5 +1,5 @@
 /*
-    aliases:
+    aliases: 
     category: Function
     isCtor: false
     isFunction: true
@@ -9,24 +9,24 @@
     isStatic: true
     member: _
     name: bindKey
-    params:
+    params: 
         (0) object: Object
         (1) key: string
         (2) [partials]: ...*
     returns: Function
     type: Function
-    comment:
+    comment: 
         Creates a function that invokes the method at `object[key]` and prepends
         any additional `_.bindKey` arguments to those provided to the bound function.
-
+        
         This method differs from `_.bind` by allowing bound functions to reference
         methods that may be redefined or don't yet exist.
         See [Peter Michaux's article](http://peter.michaux.ca/articles/lazy-function-definition-pattern)
         for more details.
-
+        
         The `_.bindKey.placeholder` value, which defaults to `_` in monolithic
         builds, may be used as a placeholder for partially applied arguments.
-
+        
         @static
         @memberOf _
         @category Function
@@ -35,25 +35,25 @@
         @param {...*} [partials] The arguments to be partially applied.
         @returns {Function} Returns the new bound function.
         @example
-
+        
         var object = {
         'user': 'fred',
         'greet': function(greeting, punctuation) {
         return greeting + ' ' + this.user + punctuation;
         }
         };
-
+        
         var bound = _.bindKey(object, 'greet', 'hi');
         bound('!');
         // => 'hi fred!'
-
+        
         object.greet = function(greeting, punctuation) {
         return greeting + 'ya ' + this.user + punctuation;
         };
-
+        
         bound('!');
         // => 'hiya fred!'
-
+        
         // using placeholders
         var bound = _.bindKey(object, 'greet', _, '!');
         bound('hi');

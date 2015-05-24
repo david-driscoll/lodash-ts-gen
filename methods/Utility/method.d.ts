@@ -11,19 +11,18 @@
     name: method
     params: 
         (0) path: Array|string
-        (1) [partials]: ...*
+        (1) [args]: ...*
     returns: Function
     type: Function
     comment: 
-        Creates a function that invokes the method at `path` on a given object
-        and prepends any additional `_.method` arguments to those provided to the
-        created function.
+        Creates a function that invokes the method at `path` on a given object.
+        Any additional arguments are provided to the invoked method.
         
         @static
         @memberOf _
         @category Utility
         @param {Array|string} path The path of the method to invoke.
-        @param {...*} [partials] The arguments to be partially applied.
+        @param {...*} [args] The arguments to invoke the method with.
         @returns {Function} Returns the new function.
         @example
         

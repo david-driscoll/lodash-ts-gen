@@ -51,4 +51,27 @@
         // => 'hi fred!'
     lang: js
 ***/
-/// <reference path="../Chain/_.d.ts"/>
+interface LoDashStatic {
+    bind<T extends Function, TResult extends Function>(func: T, thisArg: any, ...partials: any[]): TResult;
+    bind<TResult>(func: () => TResult, thisArg: any): () => TResult;
+    bind<T1, TResult>(func: (arg1: T1) => TResult, thisArg: any): (arg1: T1) => TResult;
+    bind<T1, TResult>(func: (arg1: T1) => TResult, thisArg: any, arg1: T1): () => TResult;
+    bind<T1, T2, TResult>(func: (arg1: T1, arg2: T2) => TResult, thisArg: any): (arg1: T1, arg2: T2) => TResult;
+    bind<T1, T2, TResult>(func: (arg1: T1, arg2: T2) => TResult, thisArg: any, arg1: T1): (arg2: T2) => TResult;
+    bind<T1, T2, TResult>(func: (arg1: T1, arg2: T2) => TResult, thisArg: any, arg1: T1, arg2: T2): () => TResult;
+    bind<T1, T2, T3, TResult>(func: (arg1: T1, arg2: T2, arg3: T3) => TResult, thisArg: any): (arg1: T1, arg2: T2, arg3: T3) => TResult;
+    bind<T1, T2, T3, TResult>(func: (arg1: T1, arg2: T2, arg3: T3) => TResult, thisArg: any, arg1: T1): (arg2: T2, arg3: T3) => TResult;
+    bind<T1, T2, T3, TResult>(func: (arg1: T1, arg2: T2, arg3: T3) => TResult, thisArg: any, arg1: T1, arg2: T2): (arg3: T3) => TResult;
+    bind<T1, T2, T3, TResult>(func: (arg1: T1, arg2: T2, arg3: T3) => TResult, thisArg: any, arg1: T1, arg2: T2, arg3: T3): () => TResult;
+    bind<T1, T2, T3, T4, TResult>(func: (arg1: T1, arg2: T2, arg3: T3, arg4: T4) => TResult, thisArg: any): (arg1: T1, arg2: T2, arg3: T3, arg4: T4) => TResult;
+    bind<T1, T2, T3, T4, TResult>(func: (arg1: T1, arg2: T2, arg3: T3, arg4: T4) => TResult, thisArg: any, arg1: T1): (arg2: T2, arg3: T3, arg4: T4) => TResult;
+    bind<T1, T2, T3, T4, TResult>(func: (arg1: T1, arg2: T2, arg3: T3, arg4: T4) => TResult, thisArg: any, arg1: T1, arg2: T2): (arg3: T3, arg4: T4) => TResult;
+    bind<T1, T2, T3, T4, TResult>(func: (arg1: T1, arg2: T2, arg3: T3, arg4: T4) => TResult, thisArg: any, arg1: T1, arg2: T2, arg3: T3): (arg4: T4) => TResult;
+    bind<T1, T2, T3, T4, TResult>(func: (arg1: T1, arg2: T2, arg3: T3, arg4: T4) => TResult, thisArg: any, arg1: T1, arg2: T2, arg3: T3, arg4: T4): () => TResult;
+    bind<T1, T2, T3, T4, T5, TResult>(func: (arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5) => TResult, thisArg: any): (arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5) => TResult;
+    bind<T1, T2, T3, T4, T5, TResult>(func: (arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5) => TResult, thisArg: any, arg1: T1): (arg2: T2, arg3: T3, arg4: T4, arg5: T5) => TResult;
+    bind<T1, T2, T3, T4, T5, TResult>(func: (arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5) => TResult, thisArg: any, arg1: T1, arg2: T2): (arg3: T3, arg4: T4, arg5: T5) => TResult;
+    bind<T1, T2, T3, T4, T5, TResult>(func: (arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5) => TResult, thisArg: any, arg1: T1, arg2: T2, arg3: T3): (arg4: T4, arg5: T5) => TResult;
+    bind<T1, T2, T3, T4, T5, TResult>(func: (arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5) => TResult, thisArg: any, arg1: T1, arg2: T2, arg3: T3, arg4: T4): (arg5: T5) => TResult;
+    bind<T1, T2, T3, T4, T5, TResult>(func: (arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5) => TResult, thisArg: any, arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5): () => TResult;
+}

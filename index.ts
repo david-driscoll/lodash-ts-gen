@@ -7,6 +7,18 @@ var Entry = require("docdown/lib/entry");
 var getEntries: (source: string) => any[] = (<any>Entry).getEntries;
 var lodashSource = fs.readFileSync('../lodash/lodash.src.js').toString();
 
+function indent(value: string | string[], indent: number, trim = true) {
+    if (typeof value === "string") {
+        value = <any>[value];
+    }
+
+    return _.flatten((_.flatten(<any>value)).map(v => v.split(new RegExp(`[${os.EOL}]`, 'g'))
+        .map(x => trim ? x.trim() : x)
+        .map(x => _.startsWith(x, '*') ? ' ' + x : x)
+        .map(x => _.repeat(' ', indent) + x)
+        .filter(z => !!z.trim()))).join('\n');
+}
+
 var entries = _(getEntries(lodashSource))
     .map<IEntry>(z => <any>new Entry(z, lodashSource))
     .map(z => ({
@@ -89,6 +101,7 @@ while (readContents.length) {
             .map(z => _.trim(z, '`'))
             .filter(z => !!z)
             .value();
+
         nonChainableMethods.push(...methodNames.map(z => {
             var found = _.find(tempEntires, x => x.name === z);
             if (found)
@@ -120,17 +133,32 @@ _.each(fileEntries, entry => {
         fs.mkdirSync(path.resolve('./methods', entry.category));
     }
 
+    var filename = path.resolve('./methods/', entry.category, entry.name + '.js');
+    var computedContents: { [interface: string]: string[] };
+    if (fs.existsSync(filename)) {
+        let method : Function = require(filename);
+        computedContents = method();
+    }
+
     var filename = path.resolve('./methods/', entry.category, entry.name + '.d.ts');
     if (fs.existsSync(filename)) {
-        var content = fs.readFileSync(filename).toString()
-            .replace(new RegExp('\n', 'g'), '`n')
-            .replace(new RegExp('\r', 'g'), '`r');
+        var content;
+        if (computedContents) {
+            content = header;
 
-        //console.log(content, content.match(/^\/\*(.*)\*\//));
-        content = content
-            .replace(/^\/\*(.*)\*\*\*\//, header)
-            .replace(new RegExp('`n', 'g'), '\n')
-            .replace(new RegExp('`r', 'g'), '\r');
+            content += _.map(computedContents, (methods, interface) => {
+                return `\ninterface ${interface} {\n${indent(methods, 4)}\n}\n`;
+            }).join('\n');
+        } else {
+            content = fs.readFileSync(filename).toString()
+                .replace(new RegExp('\n', 'g'), '`n')
+                .replace(new RegExp('\r', 'g'), '`r');
+
+            content = content
+                .replace(/^\/\*(.*)\*\*\*\//, header)
+                .replace(new RegExp('`n', 'g'), '\n')
+                .replace(new RegExp('`r', 'g'), '\r');
+        }
 
         fs.writeFileSync(filename, content);
     } else {
@@ -723,18 +751,6 @@ function makeProperty({name, type}: { name: string; type: string; }) {
     return [`${name}: ${type};`];
 }
 
-function indent(value: string | string[], indent: number, trim = true) {
-    if (typeof value === "string") {
-        value = <any>[value];
-    }
-
-    return _.flatten((<any>value).map(v => v.split(new RegExp(`[${os.EOL}]`, 'g'))
-        .map(x => trim ? x.trim() : x)
-        .map(x => _.startsWith(x, '*') ? ' ' + x : x)
-        .map(x => _.repeat(' ', indent) + x)
-        .filter(z => !!z.trim()))).join('\n');
-
-}
 
 var lodashStaticEntries = staticEntries
     .filter(z => z.isFunction)

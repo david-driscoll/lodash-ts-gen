@@ -15,8 +15,8 @@
     returns: Array
     type: Function
     comment: 
-        Creates an array excluding all values of the provided arrays using
-        [`SameValueZero`](https://people.mozilla.org/~jorendorff/es6-draft.html#sec-samevaluezero)
+        Creates an array of unique `array` values not included in the other
+        provided arrays using [`SameValueZero`](https://people.mozilla.org/~jorendorff/es6-draft.html#sec-samevaluezero)
         for equality comparisons.
         
         @static

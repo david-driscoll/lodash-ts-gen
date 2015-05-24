@@ -407,7 +407,7 @@
             " Returns the new array of filtered values."
         ],
         "type": "Function",
-        "comment": "/**\r\n     * Creates an array excluding all values of the provided arrays using\r\n     * [`SameValueZero`](https://people.mozilla.org/~jorendorff/es6-draft.html#sec-samevaluezero)\r\n     * for equality comparisons.\r\n     *\r\n     * @static\r\n     * @memberOf _\r\n     * @category Array\r\n     * @param {Array} array The array to inspect.\r\n     * @param {...Array} [values] The arrays of values to exclude.\r\n     * @returns {Array} Returns the new array of filtered values.\r\n     * @example\r\n     *\r\n     * _.difference([1, 2, 3], [4, 2]);\r\n     * // => [1, 3]\r\n     */",
+        "comment": "/**\r\n     * Creates an array of unique `array` values not included in the other\r\n     * provided arrays using [`SameValueZero`](https://people.mozilla.org/~jorendorff/es6-draft.html#sec-samevaluezero)\r\n     * for equality comparisons.\r\n     *\r\n     * @static\r\n     * @memberOf _\r\n     * @category Array\r\n     * @param {Array} array The array to inspect.\r\n     * @param {...Array} [values] The arrays of values to exclude.\r\n     * @returns {Array} Returns the new array of filtered values.\r\n     * @example\r\n     *\r\n     * _.difference([1, 2, 3], [4, 2]);\r\n     * // => [1, 3]\r\n     */",
         "lang": "js"
     },
     {
@@ -827,7 +827,7 @@
             " Returns the new array of shared values."
         ],
         "type": "Function",
-        "comment": "/**\r\n     * Creates an array of unique values in all provided arrays using\r\n     * [`SameValueZero`](https://people.mozilla.org/~jorendorff/es6-draft.html#sec-samevaluezero)\r\n     * for equality comparisons.\r\n     *\r\n     * @static\r\n     * @memberOf _\r\n     * @category Array\r\n     * @param {...Array} [arrays] The arrays to inspect.\r\n     * @returns {Array} Returns the new array of shared values.\r\n     * @example\r\n     * _.intersection([1, 2], [4, 2], [2, 1]);\r\n     * // => [2]\r\n     */",
+        "comment": "/**\r\n     * Creates an array of unique values that are included in all of the provided\r\n     * arrays using [`SameValueZero`](https://people.mozilla.org/~jorendorff/es6-draft.html#sec-samevaluezero)\r\n     * for equality comparisons.\r\n     *\r\n     * @static\r\n     * @memberOf _\r\n     * @category Array\r\n     * @param {...Array} [arrays] The arrays to inspect.\r\n     * @returns {Array} Returns the new array of shared values.\r\n     * @example\r\n     * _.intersection([1, 2], [4, 2], [2, 1]);\r\n     * // => [2]\r\n     */",
         "lang": "js"
     },
     {
@@ -1293,7 +1293,7 @@
             " Returns the new array of combined values."
         ],
         "type": "Function",
-        "comment": "/**\r\n     * Creates an array of unique values, in order, of the provided arrays using\r\n     * [`SameValueZero`](https://people.mozilla.org/~jorendorff/es6-draft.html#sec-samevaluezero)\r\n     * for equality comparisons.\r\n     *\r\n     * @static\r\n     * @memberOf _\r\n     * @category Array\r\n     * @param {...Array} [arrays] The arrays to inspect.\r\n     * @returns {Array} Returns the new array of combined values.\r\n     * @example\r\n     *\r\n     * _.union([1, 2], [4, 2], [2, 1]);\r\n     * // => [1, 2, 4]\r\n     */",
+        "comment": "/**\r\n     * Creates an array of unique values, in order, from all of the provided arrays\r\n     * using [`SameValueZero`](https://people.mozilla.org/~jorendorff/es6-draft.html#sec-samevaluezero)\r\n     * for equality comparisons.\r\n     *\r\n     * @static\r\n     * @memberOf _\r\n     * @category Array\r\n     * @param {...Array} [arrays] The arrays to inspect.\r\n     * @returns {Array} Returns the new array of combined values.\r\n     * @example\r\n     *\r\n     * _.union([1, 2], [4, 2], [2, 1]);\r\n     * // => [1, 2, 4]\r\n     */",
         "lang": "js"
     },
     {
@@ -1455,7 +1455,7 @@
             " Returns the new array of values."
         ],
         "type": "Function",
-        "comment": "/**\r\n     * Creates an array that is the [symmetric difference](https://en.wikipedia.org/wiki/Symmetric_difference)\r\n     * of the provided arrays.\r\n     *\r\n     * @static\r\n     * @memberOf _\r\n     * @category Array\r\n     * @param {...Array} [arrays] The arrays to inspect.\r\n     * @returns {Array} Returns the new array of values.\r\n     * @example\r\n     *\r\n     * _.xor([1, 2], [4, 2]);\r\n     * // => [1, 4]\r\n     */",
+        "comment": "/**\r\n     * Creates an array of unique values that is the [symmetric difference](https://en.wikipedia.org/wiki/Symmetric_difference)\r\n     * of the provided arrays.\r\n     *\r\n     * @static\r\n     * @memberOf _\r\n     * @category Array\r\n     * @param {...Array} [arrays] The arrays to inspect.\r\n     * @returns {Array} Returns the new array of values.\r\n     * @example\r\n     *\r\n     * _.xor([1, 2], [4, 2]);\r\n     * // => [1, 4]\r\n     */",
         "lang": "js"
     },
     {
@@ -6159,8 +6159,8 @@
             ],
             [
                 "...*",
-                "[partials]",
-                "The arguments to be partially applied.\r "
+                "[args]",
+                "The arguments to invoke the method with.\r "
             ]
         ],
         "returns": [
@@ -6168,7 +6168,7 @@
             " Returns the new function."
         ],
         "type": "Function",
-        "comment": "/**\r\n     * Creates a function that invokes the method at `path` on a given object\r\n     * and prepends any additional `_.method` arguments to those provided to the\r\n     * created function.\r\n     *\r\n     * @static\r\n     * @memberOf _\r\n     * @category Utility\r\n     * @param {Array|string} path The path of the method to invoke.\r\n     * @param {...*} [partials] The arguments to be partially applied.\r\n     * @returns {Function} Returns the new function.\r\n     * @example\r\n     *\r\n     * var objects = [\r\n     *   { 'a': { 'b': { 'c': _.constant(2) } } },\r\n     *   { 'a': { 'b': { 'c': _.constant(1) } } }\r\n     * ];\r\n     *\r\n     * _.map(objects, _.method('a.b.c'));\r\n     * // => [2, 1]\r\n     *\r\n     * _.invoke(_.sortBy(objects, _.method(['a', 'b', 'c'])), 'a.b.c');\r\n     * // => [1, 2]\r\n     */",
+        "comment": "/**\r\n     * Creates a function that invokes the method at `path` on a given object.\r\n     * Any additional arguments are provided to the invoked method.\r\n     *\r\n     * @static\r\n     * @memberOf _\r\n     * @category Utility\r\n     * @param {Array|string} path The path of the method to invoke.\r\n     * @param {...*} [args] The arguments to invoke the method with.\r\n     * @returns {Function} Returns the new function.\r\n     * @example\r\n     *\r\n     * var objects = [\r\n     *   { 'a': { 'b': { 'c': _.constant(2) } } },\r\n     *   { 'a': { 'b': { 'c': _.constant(1) } } }\r\n     * ];\r\n     *\r\n     * _.map(objects, _.method('a.b.c'));\r\n     * // => [2, 1]\r\n     *\r\n     * _.invoke(_.sortBy(objects, _.method(['a', 'b', 'c'])), 'a.b.c');\r\n     * // => [1, 2]\r\n     */",
         "lang": "js"
     },
     {
@@ -6190,8 +6190,8 @@
             ],
             [
                 "...*",
-                "[partials]",
-                "The arguments to be partially applied.\r "
+                "[args]",
+                "The arguments to invoke the method with.\r "
             ]
         ],
         "returns": [
@@ -6199,7 +6199,7 @@
             " Returns the new function."
         ],
         "type": "Function",
-        "comment": "/**\r\n     * The opposite of `_.method`; this method creates a function that invokes\r\n     * the method at a given path on `object` and prepends any additional `_.methodOf`\r\n     * arguments to those provided to the created function.\r\n     *\r\n     * @static\r\n     * @memberOf _\r\n     * @category Utility\r\n     * @param {Object} object The object to query.\r\n     * @param {...*} [partials] The arguments to be partially applied.\r\n     * @returns {Function} Returns the new function.\r\n     * @example\r\n     *\r\n     * var array = _.times(3, _.constant),\r\n     *     object = { 'a': array, 'b': array, 'c': array };\r\n     *\r\n     * _.map(['a[2]', 'c[0]'], _.methodOf(object));\r\n     * // => [2, 0]\r\n     *\r\n     * _.map([['a', '2'], ['c', '0']], _.methodOf(object));\r\n     * // => [2, 0]\r\n     */",
+        "comment": "/**\r\n     * The opposite of `_.method`; this method creates a function that invokes\r\n     * the method at a given path on `object`. Any additional arguments are\r\n     * provided to the invoked method.\r\n     *\r\n     * @static\r\n     * @memberOf _\r\n     * @category Utility\r\n     * @param {Object} object The object to query.\r\n     * @param {...*} [args] The arguments to invoke the method with.\r\n     * @returns {Function} Returns the new function.\r\n     * @example\r\n     *\r\n     * var array = _.times(3, _.constant),\r\n     *     object = { 'a': array, 'b': array, 'c': array };\r\n     *\r\n     * _.map(['a[2]', 'c[0]'], _.methodOf(object));\r\n     * // => [2, 0]\r\n     *\r\n     * _.map([['a', '2'], ['c', '0']], _.methodOf(object));\r\n     * // => [2, 0]\r\n     */",
         "lang": "js"
     },
     {

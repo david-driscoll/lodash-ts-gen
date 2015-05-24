@@ -11,19 +11,19 @@
     name: methodOf
     params: 
         (0) object: Object
-        (1) [partials]: ...*
+        (1) [args]: ...*
     returns: Function
     type: Function
     comment: 
         The opposite of `_.method`; this method creates a function that invokes
-        the method at a given path on `object` and prepends any additional `_.methodOf`
-        arguments to those provided to the created function.
+        the method at a given path on `object`. Any additional arguments are
+        provided to the invoked method.
         
         @static
         @memberOf _
         @category Utility
         @param {Object} object The object to query.
-        @param {...*} [partials] The arguments to be partially applied.
+        @param {...*} [args] The arguments to invoke the method with.
         @returns {Function} Returns the new function.
         @example
         
