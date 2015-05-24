@@ -32,4 +32,18 @@
         // logs 'deferred' after one or more milliseconds
     lang: js
 ***/
-/// <reference path="../Chain/_.d.ts"/>
+interface LoDashStatic {
+    //:comment
+    defer<T extends Function>(func: T, ...args: any[]): number;
+    defer(func: () => void): number;
+    defer<T1>(func: (arg1: T1) => void, arg1: T1): number;
+    defer<T1, T2>(func: (arg1: T1, arg2: T2) => void, arg1: T1, arg2: T2): number;
+    defer<T1, T2, T3>(func: (arg1: T1, arg2: T2, arg3: T3) => void, arg1: T1, arg2: T2, arg3: T3): number;
+    defer<T1, T2, T3, T4>(func: (arg1: T1, arg2: T2, arg3: T3, arg4: T4) => void, arg1: T1, arg2: T2, arg3: T3, arg4: T4): number;
+    defer<T1, T2, T3, T4, T5>(func: (arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5) => void, arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5): number;
+    defer<T1, T2, T3, T4, T5, T6>(func: (arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5, arg6: T6) => void, arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5, arg6: T6): number;
+    defer<T1, T2, T3, T4, T5, T6, T7>(func: (arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5, arg6: T6, arg7: T7) => void, arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5, arg6: T6, arg7: T7): number;
+    defer<T1, T2, T3, T4, T5, T6, T7, T8>(func: (arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5, arg6: T6, arg7: T7, arg8: T8) => void, arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5, arg6: T6, arg7: T7, arg8: T8): number;
+    defer<T1, T2, T3, T4, T5, T6, T7, T8, T9>(func: (arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5, arg6: T6, arg7: T7, arg8: T8, arg9: T9) => void, arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5, arg6: T6, arg7: T7, arg8: T8, arg9: T9): number;
+    defer<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(func: (arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5, arg6: T6, arg7: T7, arg8: T8, arg9: T9, arg10: T10) => void, arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5, arg6: T6, arg7: T7, arg8: T8, arg9: T9, arg10: T10): number;
+}

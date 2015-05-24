@@ -133,6 +133,10 @@ _.each(fileEntries, entry => {
         fs.mkdirSync(path.resolve('./methods', entry.category));
     }
 
+    if (!fs.existsSync(path.resolve('./methods-tests', entry.category))) {
+        fs.mkdirSync(path.resolve('./methods-tests', entry.category));
+    }
+
     var filename = path.resolve('./methods/', entry.category, entry.name + '.js');
     var computedContents: { [interface: string]: string[] };
     if (fs.existsSync(filename)) {
@@ -164,6 +168,23 @@ _.each(fileEntries, entry => {
     } else {
         header += os.EOL + '/// <reference path="../Chain/_.d.ts"/>' + os.EOL;
         fs.writeFileSync(filename, header);
+    }
+
+    var testName = path.resolve('./methods-tests/', entry.category, entry.name + '.ts');
+    if (fs.existsSync(testName)) {
+        var content;
+        content = fs.readFileSync(testName).toString()
+            .replace(new RegExp('\n', 'g'), '`n')
+            .replace(new RegExp('\r', 'g'), '`r');
+
+        content = content
+            .replace(/^\/\*(.*)\*\*\*\//, header)
+            .replace(new RegExp('`n', 'g'), '\n')
+            .replace(new RegExp('`r', 'g'), '\r');
+        fs.writeFileSync(testName, content);
+    } else {
+        header += os.EOL + '/// <reference path="../../methods/'+entry.category+'/'+entry.name+'.d.ts"/>' + os.EOL;
+        fs.writeFileSync(testName, header);
     }
 
 });

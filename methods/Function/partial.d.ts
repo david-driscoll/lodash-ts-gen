@@ -48,26 +48,218 @@
     lang: js
 ***/
 interface LoDashStatic {
-    partial<T extends Function, TResult extends Function>(func: T, thisArg: any, ...partials: any[]): TResult;
+    //:comment
+    partial<T extends Function, TResult extends Function>(func: T, ...partials: any[]): TResult;
+    //:comment
     partial<TResult>(func: () => TResult): () => TResult;
-    partial<T1, TResult>(func: (arg1: T1) => TResult): (arg1: T1) => TResult;
-    partial<T1, TResult>(func: (arg1: T1) => TResult, arg1: T1): () => TResult;
-    partial<T1, T2, TResult>(func: (arg1: T1, arg2: T2) => TResult): (arg1: T1, arg2: T2) => TResult;
-    partial<T1, T2, TResult>(func: (arg1: T1, arg2: T2) => TResult, arg1: T1): (arg2: T2) => TResult;
-    partial<T1, T2, TResult>(func: (arg1: T1, arg2: T2) => TResult, arg1: T1, arg2: T2): () => TResult;
-    partial<T1, T2, T3, TResult>(func: (arg1: T1, arg2: T2, arg3: T3) => TResult): (arg1: T1, arg2: T2, arg3: T3) => TResult;
-    partial<T1, T2, T3, TResult>(func: (arg1: T1, arg2: T2, arg3: T3) => TResult, arg1: T1): (arg2: T2, arg3: T3) => TResult;
-    partial<T1, T2, T3, TResult>(func: (arg1: T1, arg2: T2, arg3: T3) => TResult, arg1: T1, arg2: T2): (arg3: T3) => TResult;
-    partial<T1, T2, T3, TResult>(func: (arg1: T1, arg2: T2, arg3: T3) => TResult, arg1: T1, arg2: T2, arg3: T3): () => TResult;
-    partial<T1, T2, T3, T4, TResult>(func: (arg1: T1, arg2: T2, arg3: T3, arg4: T4) => TResult): (arg1: T1, arg2: T2, arg3: T3, arg4: T4) => TResult;
-    partial<T1, T2, T3, T4, TResult>(func: (arg1: T1, arg2: T2, arg3: T3, arg4: T4) => TResult, arg1: T1): (arg2: T2, arg3: T3, arg4: T4) => TResult;
-    partial<T1, T2, T3, T4, TResult>(func: (arg1: T1, arg2: T2, arg3: T3, arg4: T4) => TResult, arg1: T1, arg2: T2): (arg3: T3, arg4: T4) => TResult;
-    partial<T1, T2, T3, T4, TResult>(func: (arg1: T1, arg2: T2, arg3: T3, arg4: T4) => TResult, arg1: T1, arg2: T2, arg3: T3): (arg4: T4) => TResult;
-    partial<T1, T2, T3, T4, TResult>(func: (arg1: T1, arg2: T2, arg3: T3, arg4: T4) => TResult, arg1: T1, arg2: T2, arg3: T3, arg4: T4): () => TResult;
-    partial<T1, T2, T3, T4, T5, TResult>(func: (arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5) => TResult): (arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5) => TResult;
-    partial<T1, T2, T3, T4, T5, TResult>(func: (arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5) => TResult, arg1: T1): (arg2: T2, arg3: T3, arg4: T4, arg5: T5) => TResult;
-    partial<T1, T2, T3, T4, T5, TResult>(func: (arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5) => TResult, arg1: T1, arg2: T2): (arg3: T3, arg4: T4, arg5: T5) => TResult;
-    partial<T1, T2, T3, T4, T5, TResult>(func: (arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5) => TResult, arg1: T1, arg2: T2, arg3: T3): (arg4: T4, arg5: T5) => TResult;
-    partial<T1, T2, T3, T4, T5, TResult>(func: (arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5) => TResult, arg1: T1, arg2: T2, arg3: T3, arg4: T4): (arg5: T5) => TResult;
-    partial<T1, T2, T3, T4, T5, TResult>(func: (arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5) => TResult, arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5): () => TResult;
+    //:comment
+    partial<T1, TResult>(func: (partial1: T1) => TResult): (partial1: T1) => TResult;
+    //:comment
+    partial<T1, TResult>(func: (partial1: T1) => TResult, partial1: T1): () => TResult;
+    //:comment
+    partial<T1, T2, TResult>(func: (partial1: T1, partial2: T2) => TResult): (partial1: T1, partial2: T2) => TResult;
+    //:comment
+    partial<T1, T2, TResult>(func: (partial1: T1, partial2: T2) => TResult, partial1: T1): (partial2: T2) => TResult;
+    //:comment
+    partial<T1, T2, TResult>(func: (partial1: T1, partial2: T2) => TResult, partial1: T1, partial2: T2): () => TResult;
+    //:comment
+    partial<T1, T2, T3, TResult>(func: (partial1: T1, partial2: T2, partial3: T3) => TResult): (partial1: T1, partial2: T2, partial3: T3) => TResult;
+    //:comment
+    partial<T1, T2, T3, TResult>(func: (partial1: T1, partial2: T2, partial3: T3) => TResult, partial1: T1, partial2: LoDashStatic): (partial2: T2, partial3: T3) => TResult;
+    //:comment
+    partial<T1, T2, T3, TResult>(func: (partial1: T1, partial2: T2, partial3: T3) => TResult, partial1: T1): (partial2: T2, partial3: T3) => TResult;
+    //:comment
+    partial<T1, T2, T3, TResult>(func: (partial1: T1, partial2: T2, partial3: T3) => TResult, partial1: T1, partial2: T2): (partial3: T3) => TResult;
+    //:comment
+    partial<T1, T2, T3, TResult>(func: (partial1: T1, partial2: T2, partial3: T3) => TResult, partial1: T1, partial2: T2, partial3: T3): () => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4) => TResult): (partial1: T1, partial2: T2, partial3: T3, partial4: T4) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4) => TResult, partial1: T1, partial2: LoDashStatic): (partial2: T2, partial3: T3, partial4: T4) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4) => TResult, partial1: T1, partial2: LoDashStatic, partial3: LoDashStatic): (partial2: T2, partial3: T3, partial4: T4) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4) => TResult, partial1: T1, partial2: T2, partial3: LoDashStatic): (partial3: T3, partial4: T4) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4) => TResult, partial1: T1): (partial2: T2, partial3: T3, partial4: T4) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4) => TResult, partial1: T1, partial2: LoDashStatic): (partial2: T2, partial3: T3, partial4: T4) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4) => TResult, partial1: T1, partial2: T2): (partial3: T3, partial4: T4) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4) => TResult, partial1: T1, partial2: T2, partial3: T3): (partial4: T4) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4) => TResult, partial1: T1, partial2: T2, partial3: T3, partial4: T4): () => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, T5, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5) => TResult): (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, T5, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5) => TResult, partial1: T1, partial2: LoDashStatic): (partial2: T2, partial3: T3, partial4: T4, partial5: T5) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, T5, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5) => TResult, partial1: T1, partial2: LoDashStatic, partial3: LoDashStatic): (partial2: T2, partial3: T3, partial4: T4, partial5: T5) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, T5, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5) => TResult, partial1: T1, partial2: T2, partial3: LoDashStatic): (partial3: T3, partial4: T4, partial5: T5) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, T5, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5) => TResult, partial1: T1, partial2: LoDashStatic, partial3: LoDashStatic, partial4: LoDashStatic): (partial2: T2, partial3: T3, partial4: T4, partial5: T5) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, T5, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5) => TResult, partial1: T1, partial2: T2, partial3: LoDashStatic, partial4: LoDashStatic): (partial3: T3, partial4: T4, partial5: T5) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, T5, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5) => TResult, partial1: T1, partial2: T2, partial3: T3, partial4: LoDashStatic): (partial4: T4, partial5: T5) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, T5, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5) => TResult, partial1: T1): (partial2: T2, partial3: T3, partial4: T4, partial5: T5) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, T5, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5) => TResult, partial1: T1, partial2: LoDashStatic): (partial2: T2, partial3: T3, partial4: T4, partial5: T5) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, T5, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5) => TResult, partial1: T1, partial2: LoDashStatic, partial3: LoDashStatic): (partial2: T2, partial3: T3, partial4: T4, partial5: T5) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, T5, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5) => TResult, partial1: T1, partial2: T2, partial3: LoDashStatic): (partial3: T3, partial4: T4, partial5: T5) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, T5, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5) => TResult, partial1: T1, partial2: T2): (partial3: T3, partial4: T4, partial5: T5) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, T5, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5) => TResult, partial1: T1, partial2: LoDashStatic): (partial2: T2, partial3: T3, partial4: T4, partial5: T5) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, T5, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5) => TResult, partial1: T1, partial2: T2, partial3: T3): (partial4: T4, partial5: T5) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, T5, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5) => TResult, partial1: T1, partial2: T2, partial3: T3, partial4: T4): (partial5: T5) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, T5, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5) => TResult, partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5): () => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, T5, T6, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6) => TResult): (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, T5, T6, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6) => TResult, partial1: T1, partial2: LoDashStatic): (partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, T5, T6, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6) => TResult, partial1: T1, partial2: LoDashStatic, partial3: LoDashStatic): (partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, T5, T6, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6) => TResult, partial1: T1, partial2: T2, partial3: LoDashStatic): (partial3: T3, partial4: T4, partial5: T5, partial6: T6) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, T5, T6, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6) => TResult, partial1: T1, partial2: LoDashStatic, partial3: LoDashStatic, partial4: LoDashStatic): (partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, T5, T6, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6) => TResult, partial1: T1, partial2: T2, partial3: LoDashStatic, partial4: LoDashStatic): (partial3: T3, partial4: T4, partial5: T5, partial6: T6) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, T5, T6, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6) => TResult, partial1: T1, partial2: T2, partial3: T3, partial4: LoDashStatic): (partial4: T4, partial5: T5, partial6: T6) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, T5, T6, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6) => TResult, partial1: T1, partial2: LoDashStatic, partial3: LoDashStatic, partial4: LoDashStatic, partial5: LoDashStatic): (partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, T5, T6, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6) => TResult, partial1: T1, partial2: T2, partial3: LoDashStatic, partial4: LoDashStatic, partial5: LoDashStatic): (partial3: T3, partial4: T4, partial5: T5, partial6: T6) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, T5, T6, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6) => TResult, partial1: T1, partial2: T2, partial3: T3, partial4: LoDashStatic, partial5: LoDashStatic): (partial4: T4, partial5: T5, partial6: T6) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, T5, T6, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6) => TResult, partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: LoDashStatic): (partial5: T5, partial6: T6) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, T5, T6, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6) => TResult, partial1: T1): (partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, T5, T6, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6) => TResult, partial1: T1, partial2: LoDashStatic): (partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, T5, T6, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6) => TResult, partial1: T1, partial2: LoDashStatic, partial3: LoDashStatic): (partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, T5, T6, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6) => TResult, partial1: T1, partial2: T2, partial3: LoDashStatic): (partial3: T3, partial4: T4, partial5: T5, partial6: T6) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, T5, T6, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6) => TResult, partial1: T1, partial2: LoDashStatic, partial3: LoDashStatic, partial4: LoDashStatic): (partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, T5, T6, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6) => TResult, partial1: T1, partial2: T2, partial3: LoDashStatic, partial4: LoDashStatic): (partial3: T3, partial4: T4, partial5: T5, partial6: T6) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, T5, T6, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6) => TResult, partial1: T1, partial2: T2, partial3: T3, partial4: LoDashStatic): (partial4: T4, partial5: T5, partial6: T6) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, T5, T6, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6) => TResult, partial1: T1, partial2: T2): (partial3: T3, partial4: T4, partial5: T5, partial6: T6) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, T5, T6, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6) => TResult, partial1: T1, partial2: LoDashStatic): (partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, T5, T6, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6) => TResult, partial1: T1, partial2: LoDashStatic, partial3: LoDashStatic): (partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, T5, T6, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6) => TResult, partial1: T1, partial2: T2, partial3: LoDashStatic): (partial3: T3, partial4: T4, partial5: T5, partial6: T6) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, T5, T6, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6) => TResult, partial1: T1, partial2: T2, partial3: T3): (partial4: T4, partial5: T5, partial6: T6) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, T5, T6, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6) => TResult, partial1: T1, partial2: LoDashStatic): (partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, T5, T6, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6) => TResult, partial1: T1, partial2: T2, partial3: T3, partial4: T4): (partial5: T5, partial6: T6) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, T5, T6, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6) => TResult, partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5): (partial6: T6) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, T5, T6, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6) => TResult, partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6): () => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, T5, T6, T7, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6, partial7: T7) => TResult): (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6, partial7: T7) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, T5, T6, T7, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6, partial7: T7) => TResult, partial1: T1, partial2: LoDashStatic): (partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6, partial7: T7) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, T5, T6, T7, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6, partial7: T7) => TResult, partial1: T1, partial2: LoDashStatic, partial3: LoDashStatic): (partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6, partial7: T7) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, T5, T6, T7, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6, partial7: T7) => TResult, partial1: T1, partial2: T2, partial3: LoDashStatic): (partial3: T3, partial4: T4, partial5: T5, partial6: T6, partial7: T7) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, T5, T6, T7, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6, partial7: T7) => TResult, partial1: T1, partial2: LoDashStatic, partial3: LoDashStatic, partial4: LoDashStatic): (partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6, partial7: T7) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, T5, T6, T7, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6, partial7: T7) => TResult, partial1: T1, partial2: T2, partial3: LoDashStatic, partial4: LoDashStatic): (partial3: T3, partial4: T4, partial5: T5, partial6: T6, partial7: T7) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, T5, T6, T7, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6, partial7: T7) => TResult, partial1: T1, partial2: T2, partial3: T3, partial4: LoDashStatic): (partial4: T4, partial5: T5, partial6: T6, partial7: T7) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, T5, T6, T7, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6, partial7: T7) => TResult, partial1: T1, partial2: LoDashStatic, partial3: LoDashStatic, partial4: LoDashStatic, partial5: LoDashStatic): (partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6, partial7: T7) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, T5, T6, T7, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6, partial7: T7) => TResult, partial1: T1, partial2: T2, partial3: LoDashStatic, partial4: LoDashStatic, partial5: LoDashStatic): (partial3: T3, partial4: T4, partial5: T5, partial6: T6, partial7: T7) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, T5, T6, T7, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6, partial7: T7) => TResult, partial1: T1, partial2: T2, partial3: T3, partial4: LoDashStatic, partial5: LoDashStatic): (partial4: T4, partial5: T5, partial6: T6, partial7: T7) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, T5, T6, T7, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6, partial7: T7) => TResult, partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: LoDashStatic): (partial5: T5, partial6: T6, partial7: T7) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, T5, T6, T7, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6, partial7: T7) => TResult, partial1: T1, partial2: LoDashStatic, partial3: LoDashStatic, partial4: LoDashStatic, partial5: LoDashStatic, partial6: LoDashStatic): (partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6, partial7: T7) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, T5, T6, T7, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6, partial7: T7) => TResult, partial1: T1, partial2: T2, partial3: LoDashStatic, partial4: LoDashStatic, partial5: LoDashStatic, partial6: LoDashStatic): (partial3: T3, partial4: T4, partial5: T5, partial6: T6, partial7: T7) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, T5, T6, T7, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6, partial7: T7) => TResult, partial1: T1, partial2: T2, partial3: T3, partial4: LoDashStatic, partial5: LoDashStatic, partial6: LoDashStatic): (partial4: T4, partial5: T5, partial6: T6, partial7: T7) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, T5, T6, T7, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6, partial7: T7) => TResult, partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: LoDashStatic, partial6: LoDashStatic): (partial5: T5, partial6: T6, partial7: T7) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, T5, T6, T7, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6, partial7: T7) => TResult, partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: LoDashStatic): (partial6: T6, partial7: T7) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, T5, T6, T7, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6, partial7: T7) => TResult, partial1: T1): (partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6, partial7: T7) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, T5, T6, T7, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6, partial7: T7) => TResult, partial1: T1, partial2: LoDashStatic): (partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6, partial7: T7) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, T5, T6, T7, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6, partial7: T7) => TResult, partial1: T1, partial2: LoDashStatic, partial3: LoDashStatic): (partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6, partial7: T7) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, T5, T6, T7, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6, partial7: T7) => TResult, partial1: T1, partial2: T2, partial3: LoDashStatic): (partial3: T3, partial4: T4, partial5: T5, partial6: T6, partial7: T7) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, T5, T6, T7, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6, partial7: T7) => TResult, partial1: T1, partial2: LoDashStatic, partial3: LoDashStatic, partial4: LoDashStatic): (partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6, partial7: T7) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, T5, T6, T7, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6, partial7: T7) => TResult, partial1: T1, partial2: T2, partial3: LoDashStatic, partial4: LoDashStatic): (partial3: T3, partial4: T4, partial5: T5, partial6: T6, partial7: T7) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, T5, T6, T7, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6, partial7: T7) => TResult, partial1: T1, partial2: T2, partial3: T3, partial4: LoDashStatic): (partial4: T4, partial5: T5, partial6: T6, partial7: T7) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, T5, T6, T7, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6, partial7: T7) => TResult, partial1: T1, partial2: LoDashStatic, partial3: LoDashStatic, partial4: LoDashStatic, partial5: LoDashStatic): (partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6, partial7: T7) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, T5, T6, T7, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6, partial7: T7) => TResult, partial1: T1, partial2: T2, partial3: LoDashStatic, partial4: LoDashStatic, partial5: LoDashStatic): (partial3: T3, partial4: T4, partial5: T5, partial6: T6, partial7: T7) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, T5, T6, T7, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6, partial7: T7) => TResult, partial1: T1, partial2: T2, partial3: T3, partial4: LoDashStatic, partial5: LoDashStatic): (partial4: T4, partial5: T5, partial6: T6, partial7: T7) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, T5, T6, T7, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6, partial7: T7) => TResult, partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: LoDashStatic): (partial5: T5, partial6: T6, partial7: T7) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, T5, T6, T7, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6, partial7: T7) => TResult, partial1: T1, partial2: T2): (partial3: T3, partial4: T4, partial5: T5, partial6: T6, partial7: T7) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, T5, T6, T7, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6, partial7: T7) => TResult, partial1: T1, partial2: LoDashStatic): (partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6, partial7: T7) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, T5, T6, T7, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6, partial7: T7) => TResult, partial1: T1, partial2: LoDashStatic, partial3: LoDashStatic): (partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6, partial7: T7) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, T5, T6, T7, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6, partial7: T7) => TResult, partial1: T1, partial2: T2, partial3: LoDashStatic): (partial3: T3, partial4: T4, partial5: T5, partial6: T6, partial7: T7) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, T5, T6, T7, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6, partial7: T7) => TResult, partial1: T1, partial2: LoDashStatic, partial3: LoDashStatic, partial4: LoDashStatic): (partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6, partial7: T7) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, T5, T6, T7, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6, partial7: T7) => TResult, partial1: T1, partial2: T2, partial3: LoDashStatic, partial4: LoDashStatic): (partial3: T3, partial4: T4, partial5: T5, partial6: T6, partial7: T7) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, T5, T6, T7, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6, partial7: T7) => TResult, partial1: T1, partial2: T2, partial3: T3, partial4: LoDashStatic): (partial4: T4, partial5: T5, partial6: T6, partial7: T7) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, T5, T6, T7, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6, partial7: T7) => TResult, partial1: T1, partial2: T2, partial3: T3): (partial4: T4, partial5: T5, partial6: T6, partial7: T7) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, T5, T6, T7, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6, partial7: T7) => TResult, partial1: T1, partial2: LoDashStatic): (partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6, partial7: T7) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, T5, T6, T7, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6, partial7: T7) => TResult, partial1: T1, partial2: LoDashStatic, partial3: LoDashStatic): (partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6, partial7: T7) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, T5, T6, T7, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6, partial7: T7) => TResult, partial1: T1, partial2: T2, partial3: LoDashStatic): (partial3: T3, partial4: T4, partial5: T5, partial6: T6, partial7: T7) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, T5, T6, T7, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6, partial7: T7) => TResult, partial1: T1, partial2: T2, partial3: T3, partial4: T4): (partial5: T5, partial6: T6, partial7: T7) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, T5, T6, T7, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6, partial7: T7) => TResult, partial1: T1, partial2: LoDashStatic): (partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6, partial7: T7) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, T5, T6, T7, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6, partial7: T7) => TResult, partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5): (partial6: T6, partial7: T7) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, T5, T6, T7, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6, partial7: T7) => TResult, partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6): (partial7: T7) => TResult;
+    //:comment
+    partial<T1, T2, T3, T4, T5, T6, T7, TResult>(func: (partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6, partial7: T7) => TResult, partial1: T1, partial2: T2, partial3: T3, partial4: T4, partial5: T5, partial6: T6, partial7: T7): () => TResult;
 }

@@ -37,9 +37,17 @@
         // => 'hello fred, barney, & pebbles'
     lang: js
 ***/
-/// <reference path="../Chain/_.d.ts"/>
-
 interface LoDashStatic {
     //:comment
-    //restParam<T extends Function>(func: T, start?: number): T;
+    restParam<T extends Function>(func: Function, start?: number): T;
+    restParam<T1[], TResult>(func: (arg1: T1) => TResult): (...arg1: T1) => TResult;
+    restParam<T1, T2[], TResult>(func: (arg1: T1, arg2: T2) => TResult): (arg1: T1, ...arg2: T2) => TResult;
+    restParam<T1, T2, T3[], TResult>(func: (arg1: T1, arg2: T2, arg3: T3) => TResult): (arg1: T1, arg2: T2, ...arg3: T3) => TResult;
+    restParam<T1, T2, T3, T4[], TResult>(func: (arg1: T1, arg2: T2, arg3: T3, arg4: T4) => TResult): (arg1: T1, arg2: T2, arg3: T3, ...arg4: T4) => TResult;
+    restParam<T1, T2, T3, T4, T5[], TResult>(func: (arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5) => TResult): (arg1: T1, arg2: T2, arg3: T3, arg4: T4, ...arg5: T5) => TResult;
+    restParam<T1, T2, T3, T4, T5, T6[], TResult>(func: (arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5, arg6: T6) => TResult): (arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5, ...arg6: T6) => TResult;
+    restParam<T1, T2, T3, T4, T5, T6, T7[], TResult>(func: (arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5, arg6: T6, arg7: T7) => TResult): (arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5, arg6: T6, ...arg7: T7) => TResult;
+    restParam<T1, T2, T3, T4, T5, T6, T7, T8[], TResult>(func: (arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5, arg6: T6, arg7: T7, arg8: T8) => TResult): (arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5, arg6: T6, arg7: T7, ...arg8: T8) => TResult;
+    restParam<T1, T2, T3, T4, T5, T6, T7, T8, T9[], TResult>(func: (arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5, arg6: T6, arg7: T7, arg8: T8, arg9: T9) => TResult): (arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5, arg6: T6, arg7: T7, arg8: T8, ...arg9: T9) => TResult;
+    restParam<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10[], TResult>(func: (arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5, arg6: T6, arg7: T7, arg8: T8, arg9: T9, arg10: T10) => TResult): (arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5, arg6: T6, arg7: T7, arg8: T8, arg9: T9, ...arg10: T10) => TResult;
 }

@@ -14,7 +14,7 @@
     returns: Array
     type: Function
     comment: 
-        Creates an array of unique values that is the [symmetric difference](https://en.wikipedia.org/wiki/Symmetric_difference)
+        Creates an array that is the [symmetric difference](https://en.wikipedia.org/wiki/Symmetric_difference)
         of the provided arrays.
         
         @static

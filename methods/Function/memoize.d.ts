@@ -67,3 +67,8 @@
     lang: js
 ***/
 /// <reference path="../Chain/_.d.ts"/>
+
+interface LoDashStatic {
+    //:comment
+    memoize<T extends Function>(func: T, resolver?: Function): T;
+}

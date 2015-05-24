@@ -13,6 +13,7 @@
     "filesGlob": [
         "./**/*.ts",
         "!./methods/**/*.d.ts",
+        "!./methods-tests/**/*.ts",
         "!./node_modules/**/*.ts",
         "!./lodash.d.ts"
     ],
@@ -20,7 +21,11 @@
         "./index.ts",
         "./interfaces.d.ts",
         "./methods/Function/bind.ts",
+        "./methods/Function/defer.ts",
+        "./methods/Function/delay.ts",
+        "./methods/Function/negate.ts",
         "./methods/Function/partial.ts",
+        "./methods/Function/restParam.ts",
         "./typings/lodash/lodash.d.ts",
         "./typings/node/node.d.ts"
     ]
